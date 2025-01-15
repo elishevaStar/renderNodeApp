@@ -4,6 +4,11 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const RENDER_API_KEY = 'rnd_rNITpNEkJEbKwrCzL3maTal9ThZH'; 
 
+// Route ברירת מחדל
+app.get('/', (req, res) => {
+    res.send('Welcome to the API');
+  });
+
 app.get('/services', async (req, res) => {
   try {
     const response = await axios.get('https://api.render.com/v1/services', {
